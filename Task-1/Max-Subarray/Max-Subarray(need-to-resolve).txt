@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int a,b,c[100]={0},d=0,e=0,ma;
+    cin>>a;
+    while(a--)
+    {
+        cin>>b;
+        for(int i=0;i<b;++i)
+              {
+                  cin>>c[i];
+                  cout<<c[i]<<" ";
+              }
+        d = 0;
+        e = 0;
+        while(true)
+        {
+            if(e == b-1)
+                break;
+            if(d==e)
+                ma = max(c[d],c[d+1]);
+            else
+                ma = max(ma,c[d+1]);
+            cout<<ma<<" ";
+            ++d;
+            if(d==b-1)
+            d = ++e;
+        }
+     cout<<"\n";
+}
+    return 0;
+}
